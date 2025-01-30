@@ -11,7 +11,6 @@ from typing import List
 
 router = APIRouter(prefix="/complaints", tags=["complaints"])
 
-# Dependency to get DB session
 def get_db():
     db = SessionLocal()
     try:
@@ -28,7 +27,7 @@ async def create_complaint(
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
-    # Сохраняем файл локально (или в Cloudinary)
+    # Сохраняем фото локально
     UPLOAD_DIR = "app/static/uploads"
     os.makedirs(UPLOAD_DIR, exist_ok=True)
     file_path = f"{UPLOAD_DIR}/{file.filename}"
