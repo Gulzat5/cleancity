@@ -14,7 +14,7 @@ def get_db():
         db.close()
 
 def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)):
-    # Тут нужно декодировать токен, пока пропустим (добавим позже)
+    #TODO: Тут нужно декодировать токен
     user = db.query(User).filter(User.username == "admin").first()
     if not user:
         raise HTTPException(status_code=401, detail="Unauthorized")
