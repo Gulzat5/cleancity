@@ -22,3 +22,32 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Временные файлы Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.pytest_cache/
+venv/
+.venv/
+env/
+
+# Файлы IDE
+*.swp
+*.swo
+
+# Логи и данные
+*.sqlite
+*.db
+.env
+.env.local
+
+# Системные файлы (Windows)
+Thumbs.db
+Desktop.ini
+
+# Папки зависимостей
+node_modules/
+dist/
+build/
